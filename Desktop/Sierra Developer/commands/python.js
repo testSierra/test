@@ -15,13 +15,13 @@ module.exports.run = async (Client, message, args) => {
         })
         .then((collected) => {
             let GOTmsg = collected.first().content
-            fs.writeFile(`./PY_FILES/${message.author.id}.py`, `${GOTmsg}`, (err) =>{
+            fs.writeFile(`./${message.author.id}.py`, `${GOTmsg}`, (err) =>{
                 if (err) return console.log(`Error saving to file ${err}`)
             })
 
             message.channel.send('**Compiling...**').then((msg) => {
 
-                exec(`py ./PY_FILES/${message.author.id}.py`, (err, stdout, stderr) => {
+                exec(`py ./${message.author.id}.py`, (err, stdout, stderr) => {
                     if (err) return message.channel.send(`**Error:**\`\`\`${err.stack}\`\`\``)
                     msg.edit('**Compiled**')
 
