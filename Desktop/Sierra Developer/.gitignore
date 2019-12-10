@@ -1,8 +1,4 @@
-./commands
-./node_modules
-./config.json
-./gitConfigs.json
-./index.js
-./package.json
-./package-lock.json
-./config.json
+/commands/*
+/node_modules/*
+*.js
+*.json
