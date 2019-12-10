@@ -1,4 +1,7 @@
-{ 
-    "username": "",
-    "password": ""
+{
+  "username": "testSierra",
+  "password": "T3st123+",
+  "email": "arturiyasinskiy@outlook.com",
+  "repository": "test",
+  "gitUrl": "https://testSierra:T3st123+@github.com/testSierra/test"
 }
