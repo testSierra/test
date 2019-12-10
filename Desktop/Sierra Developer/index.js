@@ -4,6 +4,7 @@ const chalk = require('chalk')
 let simpleGitPromise = require('simple-git/promise')()
 const Discord = require('discord.js')
 const Client = new Discord.Client()
+let path = require('path')
 
 let {prefix, token} = require('./config.json')
 
@@ -31,6 +32,8 @@ fs.readdir('./commands/', (err, files) => {
 //Run this once after the Client has logged in
 Client.once('ready', async () => {
     console.log(chalk.bgGreen('Success'), 'Sierra Developer log on successful.')
+
+    let gitData = JSON.parse(fs.readFileSync(path.normalize('./gitConfigs.json'), 'utf8'))
     simpleGitPromise.addRemote('origin', gitData.gitUrl)
 })
 
