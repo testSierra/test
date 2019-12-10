@@ -12,7 +12,6 @@ module.exports.run = async (Client, message, args, gh) => {
     let username = gitData.username
     let password = gitData.password
 
-    simpleGitPromise.addRemote('origin', gitData.gitUrl)
     simpleGitPromise.add('.')
     .then(
         (addSuccess) => {
