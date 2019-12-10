@@ -7,7 +7,6 @@ let simpleGit = require('simple-git')()
 let simpleGitPromise = require('simple-git/promise')()
 
 module.exports.run = async (Client, message, args, gh) => {
-    console.log(__dirname)
     let gitData = JSON.parse(fs.readFileSync(path.normalize('./gitConfigs.json'), 'utf8'))
     let username = gitData.username
     let password = gitData.password
